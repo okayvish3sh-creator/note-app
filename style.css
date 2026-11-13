@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #faf7f2;
+    color: #302c29;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 320px;
+    border-right: 1px solid #e5ddd2;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.top h2 {
+    font-size: 20px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+#newNote {
+    background: #c76649;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+}
+
+#search {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e5ddd2;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+/* Notes */
+
+.note-card {
+    background: #fffdf9;
+    border: 1px solid #e8dfd3;
+    border-radius: 15px;
+    padding: 17px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.note-card:hover {
+    background: #f5eee5;
+}
+
+.note-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.note-card p {
+    font-size: 13px;
+    color: #888;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 11px;
+    color: #bd684c;
+}
+
+.note-card.active {
+    border-left: 4px solid #c76649;
+}
+
+/* Welcome Screen */
+
+.welcome {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+}
+
+.welcome h1 {
+    color: #c76649;
+    margin-bottom: 15px;
+    font-size: 35px;
+}
+
+.welcome p {
+    margin: 8px;
+}
+
+/* Editor */
+
+.editor {
+    flex: 1;
+    height: 100vh;
+    padding: 20px 6% 90px;
+    overflow-y: auto;
+    display: none;
+}
+
+.editor.active {
+    display: block;
+}
+
+/* Toolbar */
+
+.toolbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.toolbar button,
+.toolbar select {
+    background: #fffdf9;
+    border: 1px solid #e8dfd3;
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+
+/* Note Information */
+
+.noteInfo {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 25px;
+}
+
+#saveStatus {
+    color: green;
+}
+
+/* Title */
+
+#title {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: inherit;
+}
+
+/* Quote */
+
+#quote {
+    width: 100%;
+    height: 85px;
+    border: none;
+    border-left: 2px solid #c76649;
+    padding: 12px 18px;
+    background: #f5eee7;
+    font-size: 17px;
+    font-style: italic;
+    outline: none;
+    margin-bottom: 35px;
+    resize: vertical;
+    color: inherit;
+}
+
+/* Writing Area */
+
+#content {
+    width: 100%;
+    height: calc(100vh - 420px);
+    min-height: 500px;
+    border: none;
+    outline: none;
+    resize: none;
+    background: transparent;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.9;
+    color: inherit;
+}
+
+/* Footer */
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    left: 320px;
+    right: 0;
+    height: 55px;
+    background: #faf7f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border-top: 1px solid #e5ddd2;
+    color: #999;
+    font-size: 13px;
+}
+
+/* Dark Mode */
+
+body.dark {
+    background: #222;
+    color: #f5eee7;
+}
+
+body.dark .sidebar {
+    border-color: #444;
+}
+
+body.dark .note-card,
+body.dark .toolbar button,
+body.dark .toolbar select {
+    background: #333;
+    color: white;
+    border-color: #555;
+}
+
+body.dark #search,
+body.dark #quote {
+    background: #333;
+    color: white;
+}
+
+body.dark #title,
+body.dark #content {
+    color: white;
+}
+
+body.dark .bottom {
+    background: #222;
+    border-color: #555;
+    color: #bbb;
+}
+
+/* Mobile Screen */
+
+@media(max-width: 700px) {
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-height: 300px;
+    }
+
+    .editor {
+        width: 100%;
+        height: auto;
+        min-height: 500px;
+        padding: 20px 20px 90px;
+    }
+
+    #title {
+        font-size: 27px;
+    }
+
+    .toolbar {
+        flex-wrap: wrap;
+    }
+
+    .welcome {
+        min-height: 350px;
+    }
+
+    .bottom {
+        left: 0;
+        padding: 0 15px;
+    }
+}

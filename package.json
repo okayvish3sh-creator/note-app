@@ -1,0 +1,32 @@
+{
+  "name": "note-app",
+  "version": "1.0.0",
+  "description": "My Notes App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^45.3.1",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.notesapp.desktop",
+    "productName": "My Notes App",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.11"
+  }
+}

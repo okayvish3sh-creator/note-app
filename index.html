@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Notes App</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- SIDEBAR -->
+
+      <div class="sidebar">
+        <div class="top">
+          <h2>All Notes</h2>
+          <button id="newNote">+ New Note</button>
+        </div>
+
+        <input type="text" id="search" placeholder="Search your notes..." />
+
+        <div id="notesList"></div>
+      </div>
+
+      <!-- WELCOME SCREEN -->
+
+      <main class="welcome" id="welcome">
+        <h1>Welcome to My Notes</h1>
+        <p>Your thoughts, your space.</p>
+        <p>Click on + New Note to start writing.</p>
+      </main>
+
+      <!-- NOTE EDITOR -->
+
+      <main class="editor" id="editor">
+        <div class="toolbar">
+          <select id="category">
+            <option>Poetry & Shayari</option>
+            <option>OS & Tech Study</option>
+            <option>Personal</option>
+            <option>Ideas</option>
+            <option>Other</option>
+          </select>
+
+          <button id="themeBtn">🌙 Dark Mode</button>
+          <button id="favoriteBtn">♡ Like</button>
+          <button id="deleteBtn">🗑️ Delete</button>
+        </div>
+
+        <div class="noteInfo">
+          <span id="date"></span>
+          <span id="wordCount">0 words</span>
+          <span id="saveStatus">Saved ✓</span>
+        </div>
+
+        <input type="text" id="title" placeholder="Enter Note Title" />
+
+        <textarea
+          id="content"
+          placeholder="Start writing your note here..."
+        ></textarea>
+
+        <div class="bottom">
+          <span>✍ My Notes App</span>
+
+          <span>Auto Saved ✓</span>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
