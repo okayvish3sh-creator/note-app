@@ -15,6 +15,9 @@
     "electron": "^45.3.1",
     "electron-builder": "^26.0.0"
   },
+  "dependencies": {
+    "electron-updater": "^6.8.11"
+  },
   "build": {
     "appId": "com.notesapp.desktop",
     "productName": "My Notes App",
@@ -24,9 +27,13 @@
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
-    }
-  },
-  "dependencies": {
-    "electron-updater": "^6.8.11"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "okayvish3sh-creator",
+        "repo": "note-app"
+      }
+    ]
   }
 }
